@@ -1,0 +1,7 @@
+<div class="app-page-header" [class.app-page-header--with-page-padding]="padding">
+	<div class="app-page-header__title-container">
+		<h2 class="app-page-header__title">{{pageTitle}}</h2>
+		<div class="app-page-header__transclude"><ng-content></ng-content></div>
+	</div>
+	<p class="app-page-header__description" *ngIf="pageDescription" [innerHTML]="trustedPageDescription"></p>
+</div>

@@ -1,0 +1,36 @@
+import {Meta, Story, Props} from '@storybook/addon-docs/blocks';
+import {action, withActions} from '@storybook/addon-actions';
+import {text, withKnobs} from '@storybook/addon-knobs';
+import {moduleMetadata} from '@storybook/angular';
+import {PageHeaderComponent} from 'src/app/core/components/page-header/page-header.component';
+import {PageHeaderModule} from 'src/app/core/components/page-header/page-header.module';
+
+<Meta
+	title='Core/Components/Page header'
+	component={PageHeaderComponent}
+	decorators={[withKnobs, moduleMetadata({imports: [PageHeaderModule]})]}
+/>
+
+# Page header
+
+## Preview
+<Story name='Default usage' height='10rem'>{{
+	component: PageHeaderComponent,
+	props: {
+		pageTitle: text('pageTitle', 'Page title'),
+		pageDescription: text('pageDescription', 'Longer more descriptive page description'),
+	},
+}}</Story>
+
+## Basic usage
+```html
+<app-page-title
+	[pageTitle]="'Page title' | translate"
+>
+	[Transclude any buttons here]
+</app-page-title>
+```
+
+## Description
+
+<Props of={PageHeaderComponent} />

@@ -1,0 +1,32 @@
+AddDefaultCharset utf-8
+Header always set X-Frame-Options "SAMEORIGIN"
+
+Header always set X-Frame-Options "SAMEORIGIN"
+
+## No cache for index.html
+<FilesMatch "index\.html$">
+	<IfModule mod_expires.c>
+		ExpiresActive Off
+	</IfModule>
+	<IfModule mod_headers.c>
+		FileETag None
+		Header unset ETag
+		Header unset Pragma
+		Header unset Cache-Control
+		Header unset Last-Modified
+		Header set Pragma "no-cache"
+		Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+		Header set Expires "Mon, 10 Apr 1972 00:00:00 GMT"
+	</IfModule>
+</FilesMatch>
+
+## URL rewrite
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !(.*)\.html$
+RewriteCond %{REQUEST_URI} !(.*)\.js$
+RewriteCond %{REQUEST_URI} !(.*)\.css$
+RewriteRule ^(.*)$ index.html [QSA,L]

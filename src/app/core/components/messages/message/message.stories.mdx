@@ -1,0 +1,38 @@
+import {Meta, Story, Props} from '@storybook/addon-docs/blocks';
+import {action, withActions} from '@storybook/addon-actions';
+import {boolean, select, withKnobs} from '@storybook/addon-knobs';
+import {moduleMetadata} from '@storybook/angular';
+import {MessageComponent} from 'src/app/core/components/messages/message/message.component';
+import {MessageModule} from 'src/app/core/components/messages/message/message.module';
+import {IconsEnum} from 'scripts/modules/app-layout/icons/icons.enum';
+import {TypeEnum} from 'src/app/core/components/messages/message/type.enum';
+
+<Meta
+	title='Core/Components/Messages/Message'
+	component={MessageComponent}
+	decorators={[withKnobs, moduleMetadata({imports: [MessageModule]})]}
+/>
+
+# Messages - Message
+
+## Preview
+<Story name='Default usage' height='10rem'>{{
+	component: MessageComponent,
+	props: {
+		blink: boolean('blink', false),
+		iconReference: select('iconReference', IconsEnum, IconsEnum.bolt),
+		permanent: boolean('permanent', false),
+		small: boolean('small', false),
+		type: select('type', TypeEnum, TypeEnum.WARNING),
+		removeMessage: action('removeMessage'),
+	},
+}}</Story>
+
+## Basic usage
+```html
+<app-messages-message [type]="TypeEnum.WARNING">{{'My Message' | translate}}</app-messages-message>
+```
+
+## Description
+
+<Props of={MessageComponent} />

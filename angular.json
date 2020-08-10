@@ -1,0 +1,152 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"cli": {
+		"defaultCollection": "@daisycon/angular-schematics"
+	},
+	"projects": {
+		"test-app": {
+			"root": "",
+			"sourceRoot": "src",
+			"projectType": "application",
+			"prefix": "app",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss",
+					"lintFix": true,
+					"skipTests": true
+				},
+				"@daisycon/angular-schematics:page": {
+					"styleext": "scss",
+					"lintFix": true,
+					"skipTests": true
+				},
+				"@daisycon/angular-schematics:element": {
+					"styleext": "scss",
+					"lintFix": true,
+					"skipTests": true
+				}
+			},
+			"architect": {
+				"build": {
+					"builder": "@angular-builders/custom-webpack:browser",
+					"options": {
+						"styles": ["src/main.scss"],
+						"extractCss": true,
+						"customWebpackConfig": {
+							"path": "./config/webpack.config.js"
+						},
+						"outputPath": "dist/",
+						"index": "src/index.html",
+						"main": "src/main.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "tsconfig.app.json",
+						"assets": [
+							"src/favicon.ico",
+							"src/assets"
+						],
+						"scripts": [],
+						"stylePreprocessorOptions": {
+							"includePaths": [
+								"./node_modules/",
+								"./"
+							]
+						},
+						"es5BrowserSupport": true
+					},
+					"configurations": {
+						"production": {
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.prod.ts"
+								}
+							],
+							"optimization": true,
+							"outputHashing": "all",
+							"sourceMap": {"scripts": true, "styles": false, "hidden": true, "vendor": false},
+							"aot": true,
+							"extractCss": true,
+							"namedChunks": false,
+							"extractLicenses": true,
+							"vendorChunk": false,
+							"buildOptimizer": true,
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "2mb",
+									"maximumError": "5mb"
+								}
+							]
+						}
+					}
+				},
+				"serve": {
+					"builder": "@angular-builders/custom-webpack:dev-server",
+					"options": {
+						"browserTarget": "test-app:build",
+						"host": "localhost",
+						"port": 8080,
+						"ssl": true,
+						"sslCert": "./config/resources/ssl/san_domain_com.crt-extensions",
+						"sslKey": "./config/resources/ssl/san_domain_com.key",
+						"proxyConfig": "./config/proxy.conf.js",
+						"disableHostCheck": true
+					},
+					"configurations": {
+						"production": {
+							"browserTarget": "test-app:build:production"
+						}
+					}
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "test-app:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"main": "src/test.ts",
+						"polyfills": "src/polyfills.ts",
+						"tsConfig": "tsconfig.spec.json",
+						"karmaConfig": "karma.conf.js",
+						"scripts": [],
+						"assets": [
+							"src/favicon.ico",
+							"src/assets"
+						]
+					}
+				},
+				"lint": {
+					"builder": "@angular-devkit/build-angular:tslint",
+					"options": {
+						"tsConfig": [
+							"tsconfig.app.json",
+							"tsconfig.spec.json",
+							"e2e/tsconfig.json"
+						],
+						"exclude": [
+							"**/node_modules/**"
+						]
+					}
+				},
+				"e2e": {
+					"builder": "@angular-devkit/build-angular:protractor",
+					"options": {
+						"protractorConfig": "e2e/protractor.conf.js",
+						"devServerTarget": "test-app:serve"
+					},
+					"configurations": {
+						"production": {
+							"devServerTarget": "test-app:serve:production"
+						}
+					}
+				}
+			}
+		}
+	},
+	"defaultProject": "test-app"
+}

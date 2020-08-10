@@ -1,0 +1,16 @@
+<div class="app-messages" *ngIf="list?.messages?.length > 0">
+	<app-messages-message
+		class="app-messages__message"
+		*ngFor="let message of list.messages"
+		(action)="actionClick(message)"
+		(removeMessage)="list.removeMessage(message)"
+		[actionMessage]="message.actionMessage"
+		[blink]="message.blink"
+		[iconReference]="message.iconReference"
+		[permanent]="message.permanent"
+		[type]="message.type"
+	>
+		<span *ngIf="true !== message.containsHtml; else tplHtmlMessage">{{message.message}}</span>
+		<ng-template #tplHtmlMessage><span [innerHTML]="message.message"></span></ng-template>
+	</app-messages-message>
+</div>

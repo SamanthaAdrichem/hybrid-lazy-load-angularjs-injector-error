@@ -1,0 +1,19 @@
+{
+	"presets": [
+		[
+			"@babel/preset-env",
+			{
+				"targets": {
+					"ie": "11" //forces to ecma script 2015
+					//"esmodules": true (parse to latest ecma script)
+				},
+			}
+		]
+	],
+	"plugins": ["@babel/plugin-syntax-dynamic-import"],
+	"retainLines": true,
+	"ignore": [
+		"app/vendor",
+		"node_modules/"
+	]
+}

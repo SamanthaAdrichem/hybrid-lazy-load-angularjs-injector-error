@@ -1,0 +1,38 @@
+import {Meta, Story, Props} from '@storybook/addon-docs/blocks';
+import {action, withActions} from '@storybook/addon-actions';
+import {object, withKnobs} from '@storybook/addon-knobs';
+import {moduleMetadata} from '@storybook/angular';
+import {MessagesComponent} from 'src/app/core/components/messages/messages.component';
+import {MessagesModule} from 'src/app/core/components/messages/messages.module';
+import {ListModel} from 'src/app/core/components/messages/list.model';
+let list = new ListModel();
+list.addMessage({message: 'test 123'});
+list.addMessage({message: 'test 456', type: 'warning'});
+list.addMessage({message: 'test 789', type: 'info'});
+list.addMessage({message: 'test 101112', type: 'success'});
+
+<Meta
+	title='Core/Components/Messages'
+	component={MessageComponent}
+	decorators={[withKnobs, moduleMetadata({imports: [MessagesModule]})]}
+/>
+
+# Messages
+
+## Preview
+<Story name='Default usage' height='10rem'>{{
+	component: MessagesComponent,
+	props: {
+		list: object('list', list),
+	},
+}}</Story>
+
+## Basic usage
+```html
+<app-messages [list]="messageList"></app-messages>
+```
+
+## Description
+
+
+<Props of={MessagesComponent} />

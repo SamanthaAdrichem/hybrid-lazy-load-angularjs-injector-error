@@ -1,0 +1,27 @@
+<!-- panel-tools && alert css needs to be created / copied -->
+<!-- render line breaks needs to become mixin and included -->
+<div
+	class="app-messages-message alert"
+	[ngClass]="{
+		'app-messages-message--small': small,
+		'alert-danger': !type || type === TypeEnum.ERROR,
+		'alert-warning': type === TypeEnum.WARNING,
+		'alert-info': type === TypeEnum.INFO,
+		'alert-success': type === TypeEnum.SUCCESS,
+		'app-messages-alert--blink': blink
+	}"
+>
+	<svg class="svg-inline--fa fa-fw">
+		<use [attr.xlink:href]="'#' + iconReference || 'bolt'"></use>
+	</svg>&nbsp;<span class="h-render-line-breaks"><ng-content></ng-content></span>
+	<div class="panel-tools">
+		<a *ngIf="true !== permanent && removeMessage.observers.length > 0" (click)="removeMessage.emit()">
+			<svg class="svg-inline--fa fa-fw"><use [attr.xlink:href]="'#' + 'times'"></use></svg>
+		</a>
+	</div>
+	<div *ngIf="actionMessage" class="app-messages-message__action">
+		<a class="btn btn-default" (click)="action.emit()">
+			{{actionMessage}}
+		</a>
+	</div>
+</div>

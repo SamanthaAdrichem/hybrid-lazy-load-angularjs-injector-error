@@ -1,0 +1,34 @@
+{
+	"compileOnSave": false,
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "./",
+		"declaration": false,
+		"downlevelIteration": true,
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"importHelpers": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"outDir": "./dist/out-tsc",
+		"sourceMap": true,
+		"target": "es5",
+		"paths": {
+			"hybrid/*": ["./hybrid/*"],
+			"images/*": ["./app/images/*"],
+			"layout/*": ["./app/layout/*"],
+			"pages/*": ["./app/pages/*"],
+			"scripts/*": ["./app/scripts/*"],
+			"styles/*": ["./app/styles/*"],
+			"translations/*": ["./app/translations/*"],
+			"vendor/*": ["./app/vendor/*"]
+		},
+		"typeRoots": [
+			"node_modules/@types"
+		],
+		"lib": [
+			"es2018",
+			"dom"
+		]
+	}
+}
