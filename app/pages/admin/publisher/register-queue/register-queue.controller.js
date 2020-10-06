@@ -22,6 +22,6 @@ function AdminPublisherRegisterQueueController(
 	}
 
 	function goToLazyChild() {
-		$state.go('admin.search');
+		$state.go('search');
 	}
 }

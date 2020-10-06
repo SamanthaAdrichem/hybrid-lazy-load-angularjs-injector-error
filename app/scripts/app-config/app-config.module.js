@@ -1,13 +1,9 @@
 'use strict';
 import angular from 'angular';
 import ngRollbar from 'ng-rollbar';
-import uiRouter from '@uirouter/angularjs';
-import { upgradeModule } from "@uirouter/angular-hybrid";
 
 angular.module('dcApp.config', [
 	ngRollbar,
-	uiRouter,
-	upgradeModule.name
 ]);
 
 /* Config files */

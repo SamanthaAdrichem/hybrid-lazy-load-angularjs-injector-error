@@ -19,6 +19,6 @@ export class DashboardComponent {
 	}
 
 	public goToLazyChild(): void {
-		this.stateService.go('admin.search');
+		this.stateService.go('search');
 	}
 }

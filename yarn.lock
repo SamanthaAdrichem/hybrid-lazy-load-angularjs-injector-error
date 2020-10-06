@@ -3416,19 +3416,19 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@uirouter/angular-hybrid@10.0.1":
-  version "10.0.1"
-  resolved "https://registry.yarnpkg.com/@uirouter/angular-hybrid/-/angular-hybrid-10.0.1.tgz#929895bcab60eeeaeaf7018b5fb77c9d5cf09010"
-  integrity sha512-Htc38UxuijB0fEjEgzvV0oxd/3GbH6faO6Y9um7E3V33CLGnEfmQLG2lMVHOWkp3S3rx+/iIkdYKP/GClycEew==
+"@uirouter/angular-hybrid@11.0.0":
+  version "11.0.0"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular-hybrid/-/angular-hybrid-11.0.0.tgz#9eccf59ccd0078e14beecc947eccb3f6d2d3a0cf"
+  integrity sha512-mvUroz+qC+PfEgcSWkL06bVUXJjO8o4fP+1zJTrPrpoonuxG/Zychi2nnWFkCxL59jE631kNjh5xkN/RZFzJKw==
   dependencies:
-    tslib "^1.9.0"
+    tslib "^1.10.0"
 
-"@uirouter/angular@6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-6.0.1.tgz#fbd6512d4da82b95d182bc592a101a6606407a82"
-  integrity sha512-7UU3rv1rY0oobL3gUpeJ8QpazbgcDxG1JomBvzE7kYyxkVNBZ3rDhPRbzXTniaUXC2J56CEBE9PMtXNPDSxPyQ==
+"@uirouter/angular@7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@uirouter/angular/-/angular-7.0.0.tgz#6aec8dcc1c534a55a52277f270e48be6f2809695"
+  integrity sha512-86rOfLNjaXf6I/2t7658dKZyuGKzBRIwYEhB2J5YC/V49aD/bFxUyK7cy/C/95ti2o49XtmvTuYqzphUfLSlOA==
   dependencies:
-    tslib "^1.9.0"
+    tslib "^1.10.0"
 
 "@uirouter/angularjs@1.0.26":
   version "1.0.26"
@@ -3447,14 +3447,14 @@
   resolved "https://registry.yarnpkg.com/@uirouter/rx/-/rx-0.6.5.tgz#f584a228fdab78a4f668a0793eb896796d00373a"
   integrity sha512-srGdX+BAVTfpZ1Kl7tvdEN1ss8yctKO4YrGyy9E/4s80bGFp4KMe9Qf2L3UHn0iugBZlX7Nbmp305AQSzWXYrw==
 
-"@uirouter/visualizer@7.0.0":
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/@uirouter/visualizer/-/visualizer-7.0.0.tgz#84a728c5d082b5e2bde0c9e67d5e4b213fdb90f2"
-  integrity sha512-2XoZ3Xlj9ax/XF/gUgVLilA8q24M0WUVSJamr1kvBdcSQ1QDxWV162+NmGY9y92oVugxCIba7RZhn2x9GhKseA==
+"@uirouter/visualizer@7.2.1":
+  version "7.2.1"
+  resolved "https://registry.yarnpkg.com/@uirouter/visualizer/-/visualizer-7.2.1.tgz#e20d6722855199b113e5c4f7ddbedd25787a519b"
+  integrity sha512-Q6kyXHPiHZPsFbI8vuaVmC9WZCSHg11CeqE/WJStQ48DHI32qDW0AGyHZWX+HPonaDRNH/m+9gnfR/HQUSk/3g==
   dependencies:
-    d3-hierarchy "^1.1.8"
-    d3-interpolate "^1.3.2"
-    preact "~8.4.2"
+    d3-hierarchy "^2.0.0"
+    d3-interpolate "=1.4.0"
+    preact "~10.4.8"
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -6947,15 +6947,15 @@ d3-geo@^1.10.0, d3-geo@^1.11.3:
   dependencies:
     d3-array "1"
 
-d3-hierarchy@^1.1.8:
-  version "1.1.8"
-  resolved "https://registry.yarnpkg.com/d3-hierarchy/-/d3-hierarchy-1.1.8.tgz#7a6317bd3ed24e324641b6f1e76e978836b008cc"
-  integrity sha512-L+GHMSZNwTpiq4rt9GEsNcpLa4M96lXMR8M/nMG9p5hBE0jy6C+3hWtyZMenPQdwla249iJy7Nx0uKt3n+u9+w==
+d3-hierarchy@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/d3-hierarchy/-/d3-hierarchy-2.0.0.tgz#dab88a58ca3e7a1bc6cab390e89667fcc6d20218"
+  integrity sha512-SwIdqM3HxQX2214EG9GTjgmCc/mbSx4mQBn+DuEETubhOw6/U3fmnji4uCVrmzOydMHSO1nZle5gh6HB/wdOzw==
 
-d3-interpolate@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-1.3.2.tgz#417d3ebdeb4bc4efcc8fd4361c55e4040211fd68"
-  integrity sha512-NlNKGopqaz9qM1PXh9gBF1KSCVh+jSFErrSlD/4hybwoNX/gt1d8CDbDW+3i+5UOHhjC6s6nMvRxcuoMVNgL2w==
+d3-interpolate@=1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/d3-interpolate/-/d3-interpolate-1.4.0.tgz#526e79e2d80daa383f9e0c1c1c7dcc0f0583e987"
+  integrity sha512-V9znK0zc3jOPV4VD2zZn0sDhZU3WAE2bmlxdIwwQPPzPjvyLkd8B3JUVdS1IDUFDkWZ72c9qnv1GK2ZagTZ8EA==
   dependencies:
     d3-color "1"
 
@@ -13929,10 +13929,10 @@ postcss@^7.0.16, postcss@^7.0.23:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-preact@~8.4.2:
-  version "8.4.2"
-  resolved "https://registry.yarnpkg.com/preact/-/preact-8.4.2.tgz#1263b974a17d1ea80b66590e41ef786ced5d6a23"
-  integrity sha512-TsINETWiisfB6RTk0wh3/mvxbGRvx+ljeBccZ4Z6MPFKgu/KFGyf2Bmw3Z/jlXhL5JlNKY6QAbA9PVyzIy9//A==
+preact@~10.4.8:
+  version "10.4.8"
+  resolved "https://registry.yarnpkg.com/preact/-/preact-10.4.8.tgz#8517b106cc5591eb675237c93da99ac052cf4756"
+  integrity sha512-uVLeEAyRsCkUEFhVHlOu17OxcrwC7+hTGZ08kBoLBiGHiZooUZuibQnphgMKftw/rqYntNMyhVCPqQhcyAGHag==
 
 prelude-ls@~1.1.2:
   version "1.1.2"

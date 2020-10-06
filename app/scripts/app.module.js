@@ -1,10 +1,15 @@
 'use strict';
 
 import angular from 'angular';
+import uiRouter from "@uirouter/angularjs";
+import { upgradeModule } from "@uirouter/angular-hybrid";
+
 // Enable this line and the .run line to enable uiRouter visualizer
 // import { visualizer } from '@uirouter/visualizer';
 
 angular.module('dcApp', [
+	uiRouter,
+	upgradeModule.name,
 	'dcApp.config',
 
 	/* Pages */
